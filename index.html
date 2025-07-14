@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PT Mahakam Prima Jaya</title>
+    <meta
+      name="description"
+      content="PT Mahakam Prima Jaya, mitra andal Anda dalam penyediaan tenaga kerja berkualitas dan layanan keamanan terpercaya untuk mendukung pertumbuhan bisnis Anda."
+    />
+    <link rel="icon" type="image/png" href="/assets/MPJ LOGO.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+
+    <nav
+      id="mobileMenu"
+      class="fixed top-0 right-0 w-full h-screen bg-gray-900/95 backdrop-blur-sm z-50 transform translate-x-full transition-transform duration-500 ease-in-out"
+    >
+      <div
+        class="container mx-auto px-6 py-8 h-full flex flex-col items-center justify-center"
+      >
+        <button
+          id="closeMenuButton"
+          class="absolute top-8 right-8 text-white focus:outline-none text-3xl"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col space-y-8 text-center">
+          <a class="mobile-nav-link" href="#">Home</a>
+          <a class="mobile-nav-link" href="#about">Tentang Kami</a>
+          <a class="mobile-nav-link" href="#services">Misi Kami</a>
+          <a class="mobile-nav-link" href="maintain.html">Karir</a>
+          <a
+            class="mobile-nav-link mobile-nav-link-special"
+            href="maintain.html"
+            >MPJTeamsApp</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section
+      id="home"
+      class="relative h-screen flex items-end justify-start text-white overflow-hidden"
+    >
+      <header
+        id="header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
+      >
+        <div
+          class="container mx-auto flex justify-between items-center py-4 px-6"
+        >
+          <a href="#" class="flex items-center space-x-3">
+            <img alt="Logo MPJ" class="h-16 w-16" src="/assets/MPJ LOGO.png" />
+            <div class="flex flex-col">
+              <span
+                class="text-xl font-bold tracking-wider text-white font-heading"
+                >MAHAKAM PRIMA JAYA</span
+              >
+              <span
+                class="text-xs text-amber-400 font-semibold tracking-widest uppercase"
+                >Labour and Security Supply</span
+              >
+            </div>
+          </a>
+          <nav class="hidden md:flex items-center space-x-8">
+            <a class="nav-link-hero active" href="#">Home</a>
+            <a class="nav-link-hero" href="#about">Tentang Kami</a>
+            <a class="nav-link-hero" href="#services">Misi Kami</a>
+            <a class="nav-link-hero" href="maintain.html">Karir</a>
+            <a class="nav-link-hero nav-link-special" href="maintain.html"
+              >MPJTeamsApp</a
+            >
+          </nav>
+          <div class="md:hidden">
+            <button
+              id="mobileMenuButton"
+              class="text-white focus:outline-none text-2xl"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('/assets/homepage4.jpg')"
+      ></div>
+
+      <div class="absolute inset-0 hero-overlay"></div>
+
+      <div class="relative z-10 text-left pb-20 px-12">
+        <h1 class="hero-title font-heading leading-tight" data-aos="fade-right">
+          Mitra Profesional untuk
+          <span class="text-amber-400">Sumber Daya Manusia</span> Unggul
+        </h1>
+        <p
+          class="hero-subtitle max-w-2xl"
+          data-aos="fade-right"
+          data-aos-delay="200"
+        >
+          Kami hadir untuk menjawab setiap kebutuhan unik perusahaan Anda dengan
+          layanan outsourcing yang efisien, andal, dan terpercaya.
+        </p>
+        <div
+          class="mt-10 flex flex-col sm:flex-row justify-start items-center gap-4"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <a href="#contact" class="btn btn-primary">Hubungi Kami</a>
+          <a href="#about" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div class="lg:w-1/2 w-full" data-aos="fade-right">
+            <img
+              src="/assets/meeting.webp"
+              alt="Tim profesional berdiskusi"
+              class="rounded-xl shadow-2xl object-cover w-full h-full"
+            />
+          </div>
+          <div
+            class="lg:w-1/2 w-full text-center lg:text-left"
+            data-aos="fade-left"
+          >
+            <h2 class="section-title">
+              Mengapa <span class="text-amber-600">Mahakam Prima Jaya?</span>
+            </h2>
+            <p class="section-subtitle max-w-2xl mx-auto lg:mx-0">
+              Didirikan pada Maret 2022, PT. Mahakam Prima Jaya mendedikasikan
+              diri sebagai mitra profesional dalam pengadaan, pengelolaan, dan
+              pengembangan Sumber Daya Manusia (SDM) berkualitas untuk mendukung
+              pertumbuhan bisnis domestik dan internasional.
+            </p>
+            <div class="mt-8">
+              <a href="#services" class="btn btn-outline">Lihat Misi Kami</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="services"
+      class="py-20 bg-gray-50 overflow-hidden relative text-white"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop"
+          alt="Pekerja industri terampil"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gray-900/70"></div>
+      </div>
+
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <h2 class="section-title" data-aos="fade-down">Misi Kami</h2>
+        <p
+          class="section-subtitle !text-gray-300"
+          data-aos="fade-down"
+          data-aos-delay="150"
+        >
+          Menyediakan tenaga kerja yang kompeten sesuai kualifikasi yang
+          dibutuhkan perusahaan Anda.
+        </p>
+        <div
+          class="mt-16 swiper md:grid md:grid-cols-3 md:gap-10"
+          id="services-slider"
+        >
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card h-full">
+                <div class="service-icon bg-amber-100 text-amber-600">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3 class="service-title">Tenaga Kerja Berkualitas</h3>
+                <p class="service-description">
+                  Menyediakan tenaga kerja terlatih, andal, dan berkualitas
+                  tinggi di berbagai bidang.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card h-full">
+                <div class="service-icon bg-sky-100 text-sky-600">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="service-title">Meningkatkan Produktivitas</h3>
+                <p class="service-description">
+                  Mengidentifikasi peluang pengembangan untuk mencapai tingkat
+                  kinerja yang lebih baik.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="400">
+              <div class="service-card h-full">
+                <div class="service-icon bg-emerald-100 text-emerald-600">
+                  <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="service-title">Mitra Terpercaya</h3>
+                <p class="service-description">
+                  Memberikan solusi yang relevan dengan mendengarkan setiap
+                  kebutuhan klien kami.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="500">
+              <div class="service-card h-full">
+                <div class="service-icon bg-rose-100 text-rose-600">
+                  <i class="fas fa-shield-halved"></i>
+                </div>
+                <h3 class="service-title">Keamanan & Kesejahteraan</h3>
+                <p class="service-description">
+                  Memastikan semua tenaga kerja bekerja dalam lingkungan yang
+                  aman dan mendukung.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="600">
+              <div class="service-card h-full">
+                <div class="service-icon bg-indigo-100 text-indigo-600">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="service-title">Inovasi Berkelanjutan</h3>
+                <p class="service-description">
+                  Terus berinovasi sesuai perkembangan teknologi dan kebutuhan
+                  pasar yang dinamis.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="700">
+              <div class="service-card h-full">
+                <div class="service-icon bg-slate-100 text-slate-600">
+                  <i class="fas fa-gavel"></i>
+                </div>
+                <h3 class="service-title">Etika Bisnis</h3>
+                <p class="service-description">
+                  Mematuhi semua regulasi hukum yang berlaku dengan transparansi
+                  penuh.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="values" class="py-20 bg-white overflow-hidden">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title text-center" data-aos="fade-down">
+          Nilai-Nilai Kami (M-P-J)
+        </h2>
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+            <img
+              src="https://cdn3d.iconscout.com/3d/premium/thumb/goal-4035930-3337439.png"
+              alt="Mastery 3D Icon"
+              class="value-icon"
+            />
+            <h3 class="value-title">MASTERY (M)</h3>
+            <p class="value-description">
+              Mencapai keunggulan dan terus mengembangkan keahlian untuk
+              memberikan layanan berkualitas tinggi.
+            </p>
+          </div>
+          <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+            <img
+              src="https://cdn3d.iconscout.com/3d/premium/thumb/agreement-4035939-3337448.png"
+              alt="Professionalism 3D Icon"
+              class="value-icon"
+            />
+            <h3 class="value-title">PROFESIONALISM (P)</h3>
+            <p class="value-description">
+              Bertindak dengan integritas, kompetensi, dan keandalan tinggi
+              dalam setiap interaksi.
+            </p>
+          </div>
+          <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+            <img
+              src="https://cdn3d.iconscout.com/3d/premium/thumb/path-4035948-3337457.png"
+              alt="Journey 3D Icon"
+              class="value-icon"
+            />
+            <h3 class="value-title">JOURNEY (J)</h3>
+            <p class="value-description">
+              Memandang hubungan dengan klien sebagai perjalanan jangka panjang
+              yang berkelanjutan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="directors" class="py-20 bg-gray-50 overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-down">
+          <h2 class="section-title">Jajaran Direksi Kami</h2>
+          <p class="section-subtitle max-w-2xl mx-auto">
+            Dipimpin oleh para profesional berpengalaman yang berdedikasi untuk
+            membawa perusahaan menuju kesuksesan.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+          <div
+            class="director-card-container"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="director-card">
+              <div class="director-image-wrapper">
+                <div class="director-image">
+                  <img src="/assets/IU1.jpg" alt="Foto CEO" />
+                </div>
+              </div>
+              <div class="director-info">
+                <h3 class="director-name">Lee Ji Eun</h3>
+                <p class="director-title">Chief Executive Officer</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="director-card-container"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="director-card">
+              <div class="director-image-wrapper">
+                <div class="director-image">
+                  <img src="/assets/SUZY1.jpg" alt="Foto CEO" />
+                </div>
+              </div>
+              <div class="director-info">
+                <h3 class="director-name">Bae Suzy</h3>
+                <p class="director-title">President Commissioner</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="director-card-container"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
+            <div class="director-card">
+              <div class="director-image-wrapper">
+                <div class="director-image">
+                  <img src="/assets/KZ1.jpeg" alt="Foto COO" />
+                </div>
+              </div>
+              <div class="director-info">
+                <h3 class="director-name">Kazuha</h3>
+                <p class="director-title">Commissioner</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="director-card-container"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+            <div class="director-card">
+              <div class="director-image-wrapper">
+                <div class="director-image">
+                  <img src="/assets/TZ1.jpeg" alt="Foto CFO" />
+                </div>
+              </div>
+              <div class="director-info">
+                <h3 class="director-name">Tzuyu</h3>
+                <p class="director-title">Chief Financial Officer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats-section" class="py-20 bg-gray-50 overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div
+          class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16"
+        >
+          <div class="lg:w-1/3 w-full flex-shrink-0" data-aos="fade-right">
+            <div class="text-left mb-10">
+              <h2 class="section-title">Terbukti & Terpercaya</h2>
+              <p class="section-subtitle">
+                Pengalaman dan kepercayaan klien adalah pondasi kami.
+              </p>
+            </div>
+
+            <div class="main-stat-vertical-container">
+              <div class="main-stat-vertical-circle">
+                <span
+                  class="main-stat-vertical-number stat-number"
+                  data-target="2"
+                  >0</span
+                >
+              </div>
+              <div class="main-stat-vertical-label">
+                <h3 class="font-bold text-xl text-gray-800">
+                  Tahun Pengalaman
+                </h3>
+                <p class="text-gray-500">Membangun keunggulan sejak 2023.</p>
+              </div>
+            </div>
+
+            <hr class="my-8 border-gray-200" />
+
+            <div class="flex flex-col items-start gap-6">
+              <div class="secondary-stat-item-small">
+                <i class="fas fa-briefcase secondary-stat-icon-small"></i>
+                <div>
+                  <h3
+                    class="secondary-stat-number-small stat-number"
+                    data-target="3"
+                  >
+                    0
+                  </h3>
+                  <p class="secondary-stat-label-small">Klien</p>
+                </div>
+              </div>
+              <div class="secondary-stat-item-small">
+                <i class="fas fa-users secondary-stat-icon-small"></i>
+                <div>
+                  <h3
+                    class="secondary-stat-number-small stat-number"
+                    data-target="250"
+                  >
+                    0
+                  </h3>
+                  <p class="secondary-stat-label-small">
+                    Tenaga Kerja Terampil
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-2/3 w-full" data-aos="fade-left">
+            <div class="swiper gallery-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="/assets/a8.jpg"
+                    alt="Galeri Perusahaan 1"
+                    class="gallery-slide-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="/assets/a2.jpg"
+                    alt="Galeri Perusahaan 2"
+                    class="gallery-slide-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="/assets/a4.jpg"
+                    alt="Galeri Perusahaan 3"
+                    class="gallery-slide-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="/assets/a5.jpg"
+                    alt="Galeri Perusahaan 4"
+                    class="gallery-slide-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="/assets/a6.jpg"
+                    alt="Galeri Perusahaan 5"
+                    class="gallery-slide-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="/assets/a7.jpg"
+                    alt="Galeri Perusahaan 6"
+                    class="gallery-slide-image"
+                  />
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="testimonials" class="py-20 bg-white overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-down">
+          <h2 class="section-title">Apa Kata Klien Kami</h2>
+          <p class="section-subtitle max-w-2xl mx-auto">
+            Kami bangga dapat memberikan layanan terbaik yang diakui oleh para
+            mitra kami.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-quote-left testimonial-quote-icon"></i>
+            <p class="testimonial-text">
+              "Kerja sama dengan Mahakam Prima Jaya sangat memuaskan. Mereka
+              menyediakan tenaga kerja yang profesional dan sesuai dengan
+              kualifikasi yang kami butuhkan. Sangat responsif!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://placehold.co/100x100/1f2937/f59e0b?text=A"
+                alt="Foto Klien 1"
+                class="testimonial-avatar"
+              />
+              <div>
+                <h4 class="testimonial-name">Andi Pratama</h4>
+                <p class="testimonial-company">
+                  Manajer HR, PT. Sukses Sejahtera
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-quote-left testimonial-quote-icon"></i>
+            <p class="testimonial-text">
+              "Proses rekrutmen menjadi jauh lebih efisien sejak kami
+              menggunakan jasa MPJ. Tim mereka sangat memahami kebutuhan
+              industri kami dan memberikan kandidat-kandidat terbaik."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://placehold.co/100x100/4b5563/fde68a?text=S"
+                alt="Foto Klien 2"
+                class="testimonial-avatar"
+              />
+              <div>
+                <h4 class="testimonial-name">Siti Nurhaliza</h4>
+                <p class="testimonial-company">
+                  Direktur Operasional, CV. Cipta Karya
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-quote-left testimonial-quote-icon"></i>
+            <p class="testimonial-text">
+              "Layanan keamanan yang diberikan sangat andal. Personel
+              keamanannya sigap, terlatih, dan profesional. Kami merasa jauh
+              lebih aman. Terima kasih Mahakam Prima Jaya."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://placehold.co/100x100/6b7280/fef3c7?text=B"
+                alt="Foto Klien 3"
+                class="testimonial-avatar"
+              />
+              <div>
+                <h4 class="testimonial-name">Bambang Wijoyo</h4>
+                <p class="testimonial-company">
+                  Kepala Gudang, PT. Logistik Express
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- <section id="testimonials" class="py-20 bg-white overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-down">
+      <h2 class="section-title">Apa Kata Klien Kami</h2>
+      <p class="section-subtitle max-w-2xl mx-auto">
+        Kami bangga dapat memberikan layanan terbaik yang diakui oleh para
+        mitra kami.
+      </p>
+    </div>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20"
+    >
+      <div
+        class="testimonial-card-v2"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="testimonial-avatar-v2">
+          <img
+            src="https://cdn3d.iconscout.com/3d/premium/thumb/man-avatar-6299539-5187871.png"
+            alt="Foto Klien 1"
+          />
+        </div>
+        <div class="testimonial-content-v2">
+          <p class="testimonial-text-v2">
+            "Kerja sama dengan Mahakam Prima Jaya sangat memuaskan. Mereka
+            menyediakan tenaga kerja yang profesional dan sesuai dengan
+            kualifikasi yang kami butuhkan. Sangat responsif!"
+          </p>
+          <div class="testimonial-author-v2">
+            <h4 class="testimonial-name-v2">Andi Pratama</h4>
+            <p class="testimonial-company-v2">
+              Manajer HR, PT. Sukses Sejahtera
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="testimonial-card-v2"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <div class="testimonial-avatar-v2">
+          <img
+            src="https://cdn3d.iconscout.com/3d/premium/thumb/woman-avatar-6299541-5187873.png"
+            alt="Foto Klien 2"
+          />
+        </div>
+        <div class="testimonial-content-v2">
+          <p class="testimonial-text-v2">
+            "Proses rekrutmen menjadi jauh lebih efisien sejak kami
+            menggunakan jasa MPJ. Tim mereka sangat memahami kebutuhan
+            industri kami dan memberikan kandidat-kandidat terbaik."
+          </p>
+          <div class="testimonial-author-v2">
+            <h4 class="testimonial-name-v2">Siti Nurhaliza</h4>
+            <p class="testimonial-company-v2">
+              Direktur Operasional, CV. Cipta Karya
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="testimonial-card-v2"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        <div class="testimonial-avatar-v2">
+          <img
+            src="https://cdn3d.iconscout.com/3d/premium/thumb/man-avatar-6299538-5187870.png"
+            alt="Foto Klien 3"
+          />
+        </div>
+        <div class="testimonial-content-v2">
+          <p class="testimonial-text-v2">
+            "Layanan keamanan yang diberikan sangat andal. Personel
+            keamanannya sigap, terlatih, dan profesional. Kami merasa jauh
+            lebih aman. Terima kasih Mahakam Prima Jaya."
+          </p>
+          <div class="testimonial-author-v2">
+            <h4 class="testimonial-name-v2">Bambang Wijoyo</h4>
+            <p class="testimonial-company-v2">
+              Kepala Gudang, PT. Logistik Express
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section id="testimonials" class="py-20 bg-white overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-down">
+      <h2 class="section-title">Apa Kata Klien Kami</h2>
+      <p class="section-subtitle max-w-2xl mx-auto">
+        Kami bangga dapat memberikan layanan terbaik yang diakui oleh para
+        mitra kami.
+      </p>
+    </div>
+
+    <div class="swiper" id="testimonials-slider">
+  <div class="swiper-wrapper pt-16 pb-20">
+        <div class="swiper-slide">
+          <div class="testimonial-card-v2 h-full">
+            <div class="testimonial-avatar-v2">
+              <img
+                src="https://cdn3d.iconscout.com/3d/premium/thumb/man-avatar-6299539-5187871.png"
+                alt="Foto Klien 1"
+              />
+            </div>
+            <div class="testimonial-content-v2">
+              <p class="testimonial-text-v2">
+                "Kerja sama dengan Mahakam Prima Jaya sangat memuaskan.
+                Mereka menyediakan tenaga kerja yang profesional dan sesuai
+                dengan kualifikasi yang kami butuhkan. Sangat responsif!"
+              </p>
+              <div class="testimonial-author-v2">
+                <h4 class="testimonial-name-v2">Andi Pratama</h4>
+                <p class="testimonial-company-v2">
+                  Manajer HR, PT. Sukses Sejahtera
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-card-v2 h-full">
+            <div class="testimonial-avatar-v2">
+              <img
+                src="https://cdn3d.iconscout.com/3d/premium/thumb/woman-avatar-6299541-5187873.png"
+                alt="Foto Klien 2"
+              />
+            </div>
+            <div class="testimonial-content-v2">
+              <p class="testimonial-text-v2">
+                "Proses rekrutmen menjadi jauh lebih efisien sejak kami
+                menggunakan jasa MPJ. Tim mereka sangat memahami kebutuhan
+                industri kami dan memberikan kandidat-kandidat terbaik."
+              </p>
+              <div class="testimonial-author-v2">
+                <h4 class="testimonial-name-v2">Siti Nurhaliza</h4>
+                <p class="testimonial-company-v2">
+                  Direktur Operasional, CV. Cipta Karya
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-card-v2 h-full">
+            <div class="testimonial-avatar-v2">
+              <img
+                src="https://cdn3d.iconscout.com/3d/premium/thumb/man-avatar-6299538-5187870.png"
+                alt="Foto Klien 3"
+              />
+            </div>
+            <div class="testimonial-content-v2">
+              <p class="testimonial-text-v2">
+                "Layanan keamanan yang diberikan sangat andal. Personel
+                keamanannya sigap, terlatih, dan profesional. Kami merasa
+                jauh lebih aman. Terima kasih Mahakam Prima Jaya."
+              </p>
+              <div class="testimonial-author-v2">
+                <h4 class="testimonial-name-v2">Bambang Wijoyo</h4>
+                <p class="testimonial-company-v2">
+                  Kepala Gudang, PT. Logistik Express
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-card-v2 h-full">
+            <div class="testimonial-avatar-v2">
+              <img
+                src="https://cdn3d.iconscout.com/3d/premium/thumb/man-avatar-6299538-5187870.png"
+                alt="Foto Klien 3"
+              />
+            </div>
+            <div class="testimonial-content-v2">
+              <p class="testimonial-text-v2">
+                "Layanan keamanan yang diberikan sangat andal. Personel
+                keamanannya sigap, terlatih, dan profesional. Kami merasa
+                jauh lebih aman. Terima kasih Mahakam Prima Jaya."
+              </p>
+              <div class="testimonial-author-v2">
+                <h4 class="testimonial-name-v2">Bambang Wijoyo</h4>
+                <p class="testimonial-company-v2">
+                  Kepala Gudang, PT. Logistik Express
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+    <section id="news" class="py-20 bg-gray-50 overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-down">
+          <h2 class="section-title">Berita Terkini Seputar Tenaga Kerja</h2>
+          <p class="section-subtitle max-w-2xl mx-auto">
+            Ikuti perkembangan terbaru dalam industri sumber daya manusia dan
+            ketenagakerjaan.
+          </p>
+        </div>
+
+        <div class="swiper" id="news-slider" data-aos="fade-up">
+          <div class="swiper-wrapper" id="news-slider-wrapper">
+            <div class="news-loading">
+              <div class="spinner"></div>
+              <p class="mt-4 text-gray-500">Memuat berita...</p>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clients" class="py-12 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h3
+          class="text-center text-xl font-semibold text-gray-500 mb-8"
+          data-aos="fade-up"
+        >
+          Dipercaya oleh Perusahaan Terkemuka
+        </h3>
+        <div class="client-logos" data-aos="fade-up" data-aos-delay="150">
+          <img src="/assets/kpc.png" alt="Logo Klien A" />
+          <img src="/assets/pama.png" alt="Logo Klien B" />
+          <img src="/assets/amm.jpeg" alt="Logo Klien C" />
+          <img src="/assets/kpm.png" alt="Logo Klien D" />
+          <img src="/assets/dh.webp" alt="Logo Klien E" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-down">
+          <h2 class="section-title">Lokasi & Kontak</h2>
+          <p class="section-subtitle">
+            Temukan kami di peta atau hubungi kami melalui informasi di bawah.
+          </p>
+        </div>
+        <div class="flex flex-col lg:flex-row items-center gap-8">
+          <div class="lg:w-1/3 w-full h-full" data-aos="fade-right">
+            <img
+              src="/assets/mpj-kantor.jpg"
+              alt="Kantor MPJ"
+              class="rounded-xl shadow-lg object-cover w-full h-[450px]"
+            />
+          </div>
+          <div
+            class="lg:w-2/3 w-full h-[450px] rounded-xl overflow-hidden shadow-2xl shadow-gray-300/30"
+            data-aos="fade-left"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.4728424745267!2d117.56187657371802!3d0.7540051632039177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x320bbf5791a329ad%3A0xe1ff6b01d8535fa0!2sPT.%20Mahakam%20Prima%20Jaya!5e0!3m2!1sen!2sid!4v1752477539319!5m2!1sen!2sid"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-down">
+          <h2 class="section-title">Pertanyaan Umum</h2>
+          <p class="section-subtitle max-w-2xl mx-auto">
+            Menemukan jawaban cepat untuk pertanyaan umum tentang layanan kami.
+          </p>
+        </div>
+        <div class="max-w-3xl mx-auto" data-aos="fade-up">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apa saja jenis tenaga kerja yang disediakan?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Kami menyediakan berbagai jenis tenaga kerja terampil, mulai
+                dari staf administrasi, driver sarana, helper, hingga petugas
+                keamanan yang telah melalui proses seleksi dan pelatihan ketat
+                sesuai standar industri.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Bagaimana proses rekrutmen di PT. Mahakam Prima Jaya?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Proses kami dimulai dari pemahaman mendalam akan kebutuhan
+                klien, dilanjutkan dengan penyaringan kandidat, wawancara, tes
+                kompetensi, dan pemeriksaan latar belakang. Kami hanya
+                menyajikan kandidat yang paling sesuai dengan kriteria Anda.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span
+                >Apakah ada masa percobaan untuk tenaga kerja yang
+                ditempatkan?</span
+              >
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Untuk saat ini belum tersedia, namun kami terus mengevaluasi
+                kebijakan ini untuk masa depan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300">
+      <div class="container mx-auto px-6 pt-16 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div class="md:col-span-2 lg:col-span-1">
+            <a href="#" class="flex items-center space-x-3 mb-5">
+              <img
+                alt="Logo MPJ"
+                class="h-12 w-12"
+                src="/assets/MPJ LOGO.png"
+              />
+              <span
+                class="text-xl font-bold tracking-wider text-white font-heading"
+                >MAHAKAM PRIMA JAYA</span
+              >
+            </a>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              Mitra profesional dalam pengadaan, pengelolaan, dan pengembangan
+              SDM berkualitas untuk mendukung pertumbuhan bisnis Anda.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Navigasi</h3>
+            <ul class="mt-4 space-y-3">
+              <li><a href="#about" class="footer-link">Tentang Kami</a></li>
+              <li><a href="#services" class="footer-link">Misi Kami</a></li>
+              <li><a href="#values" class="footer-link">Nilai Kami</a></li>
+              <li><a href="#contact" class="footer-link">Hubungi Kami</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Hubungi Kami</h3>
+            <ul class="mt-4 space-y-4 text-sm">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-map-marker-alt w-4 pt-1 text-amber-400"></i>
+                <span
+                  >Jl. Awang Long RT 02, Sepaso, Bengalon, Kab. Kutai Timur,
+                  Kalimantan Timur</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-phone w-4 pt-1 text-amber-400"></i>
+                <span>(021) 123-4567</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-envelope w-4 pt-1 text-amber-400"></i>
+                <span>info@mahakamprimajaya.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Ikuti Kami</h3>
+            <p class="text-sm text-gray-400 mt-4 mb-4">
+              Dapatkan info terbaru dari kami melalui sosial media.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-x"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center"
+        >
+          <p
+            class="text-sm text-gray-500 text-center sm:text-left mb-4 sm:mb-0"
+          >
+            © <span id="currentYear"></span> PT. Mahakam Prima Jaya. All Rights
+            Reserved.
+          </p>
+          <div class="flex items-center space-x-6 text-sm text-gray-500">
+            <a href="#" class="hover:text-amber-400 transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-amber-400 transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button
+      id="scrollToTopBtn"
+      class="fixed bottom-6 right-6 w-12 h-12 bg-amber-500 text-white rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform scale-0 z-50"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // Durasi animasi dalam milidetik
+        once: false, // Animasi hanya terjadi sekali
+        offset: 50, // Memicu animasi sedikit lebih awal
+      });
+    </script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
