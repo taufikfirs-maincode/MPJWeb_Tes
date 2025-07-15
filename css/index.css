@@ -85,81 +85,67 @@ body {
   }
 }
 
-/* ===== HEADER & NAVBAR STYLES (REVISED) ===== */
+/*
+================================================
+  HEADER & NAVIGATION STYLES (FINAL REVISION)
+================================================
+*/
+
+/* --- Main Header Container --- */
 #header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.85),
     transparent
   );
-  transition: background-color 0.4s ease-out, padding 0.4s ease-out;
+  transition: background-color 0.4s ease-out, padding 0.4s ease-out,
+    box-shadow 0.4s ease-out, background-image 0.4s ease-out;
 }
 
-/* Style untuk header saat di-scroll */
-.header-scrolled {
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+/* --- State: Header Saat di-Scroll --- */
+#header.header-scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  background-image: none; /* Menghapus gradien saat di-scroll */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.08);
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-/* Mengubah warna teks dan link saat header di-scroll */
-.header-scrolled .font-heading {
+/* --- Logo Styling --- */
+#header .font-heading,
+#header .text-amber-400 {
+  transition: color 0.4s ease-out;
+}
+
+/* Mengubah warna teks logo saat di-scroll */
+#header.header-scrolled .font-heading {
   color: var(--color-text);
 }
-.header-scrolled span.text-amber-400 {
+#header.header-scrolled .text-amber-400 {
   color: var(--color-primary-dark);
 }
-.header-scrolled .nav-link-hero {
-  color: #4b5563; /* text-gray-600 */
-}
-.header-scrolled .nav-link-hero:hover {
-  color: var(--color-primary-dark);
-}
-.header-scrolled .nav-link-hero::after {
-  background-color: var(--color-primary);
-}
-.header-scrolled #mobileMenuButton {
-  color: var(--color-text);
-}
 
-/* ===== Header on Scroll Styling ===== */
-#header {
-  transition: background-color 0.4s ease-out, padding 0.4s ease-out;
-}
-
-#header.scrolled {
-  background-color: rgba(17, 24, 39, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Untuk browser Safari */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-#header.scrolled img {
-  height: 3rem;
-  width: 3rem;
-  transition: height 0.4s ease-out, width 0.4s ease-out;
-}
-
-#header img {
-  transition: height 0.4s ease-out, width 0.4s ease-out;
-}
-
-/* Navigasi di dalam Hero (transparan) */
+/* --- Desktop Navigation Links --- */
 .nav-link-hero {
   color: white;
   font-weight: 600;
   position: relative;
   padding-bottom: 0.5rem;
-  transition: var(--transition-fast);
+  transition: color 0.3s ease;
 }
 .nav-link-hero:hover {
-  color: #fbbf24; /* amber-400 */
+  color: var(--color-primary);
 }
+
 .nav-link-hero::after {
   content: "";
   position: absolute;
@@ -167,24 +153,83 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #fbbf24; /* amber-400 */
-  transition: var(--transition-fast);
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
 }
 .nav-link-hero:hover::after,
 .nav-link-hero.active::after {
   width: 100%;
 }
 
-/* Mobile Menu Styles */
+/* Styling Link Navigasi Saat Header di-Scroll */
+#header.header-scrolled .nav-link-hero {
+  color: #4b5563;
+}
+#header.header-scrolled .nav-link-hero:hover {
+  color: var(--color-primary-dark);
+}
+#header.header-scrolled .nav-link-hero::after {
+  background-color: var(--color-primary);
+}
+
+/* Tombol Menu Mobile (Hamburger) */
+#mobileMenuButton {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.4s ease-out;
+}
+#header.header-scrolled #mobileMenuButton {
+  color: var(--color-text);
+}
+
+/*
+================================================
+  MOBILE MENU STYLES
+================================================
+*/
+
+#mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%); /* Mulai dari luar layar */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9998;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* State saat menu mobile terbuka (menggunakan class `open` dari JS) */
+#mobileMenu.open {
+  transform: translateX(0);
+}
+
+#closeMenuButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 9999;
+}
+
 .mobile-nav-link {
   color: white;
-  font-size: 1.875rem; /* text-3xl */
-  line-height: 2.25rem;
-  font-weight: 700; /* font-bold */
-  transition: all 0.3s ease;
+  font-size: 1.875rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 .mobile-nav-link:hover {
-  color: #fbbf24; /* text-amber-400 */
+  color: var(--color-primary);
   transform: scale(1.1);
 }
 
@@ -1001,7 +1046,11 @@ section#home .relative.z-10 {
 
 .nav-link-special {
   /* 1. Gradien diganti dengan warna utama brand */
-  background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary-dark),
+    var(--color-primary)
+  );
   color: white !important;
   padding: 0.6rem 1.2rem;
   border-radius: 9999px;
@@ -1062,7 +1111,11 @@ section#home .relative.z-10 {
 
 /* ===== Style untuk Mobile Menu (Branded & Konsisten) ===== */
 .mobile-nav-link-special {
-  background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary-dark),
+    var(--color-primary)
+  );
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   font-size: 1.5rem;
@@ -1080,5 +1133,5 @@ section#home .relative.z-10 {
 }
 
 .mobile-nav-link-special .icon-special {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
