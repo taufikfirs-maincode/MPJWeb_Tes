@@ -638,6 +638,101 @@ section#home .relative.z-10 {
   letter-spacing: 0.5px;
 }
 
+/* ===== Final Testimonial Design (Enlarged Photos) ===== */
+.testimonial-card-final {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card-final:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-content-final {
+  position: relative;
+  padding-left: 2.5rem;
+  flex-grow: 1;
+}
+
+.testimonial-quote-icon-final {
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  font-size: 2.5rem;
+  color: #fde68a;
+  opacity: 0.8;
+}
+
+.testimonial-text-final {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #374151;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author-final {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1.5rem;
+  margin-top: auto;
+}
+
+.testimonial-avatar-final {
+  /* FOTO DIPERBESAR DI SINI */
+  width: 70px; /* Diperbesar dari 55px */
+  height: 70px; /* Diperbesar dari 55px */
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.25rem; /* Jarak ke teks disesuaikan */
+  flex-shrink: 0; /* Mencegah gambar menyusut */
+  /* Bingkai disesuaikan agar proporsional */
+  box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--color-primary);
+}
+
+.testimonial-author-info-final {
+  line-height: 1.4;
+}
+
+.testimonial-name-final {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem; /* Sedikit diperbesar agar seimbang */
+  color: var(--color-text);
+}
+
+.testimonial-company-final {
+  font-size: 0.9rem; /* Sedikit diperbesar agar seimbang */
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.testimonial-stars {
+  color: #f59e0b;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* Penyesuaian Swiper Pagination */
+#testimonials-slider .swiper-pagination {
+  bottom: 0 !important;
+}
+#testimonials-slider .swiper-pagination-bullet-active {
+  background-color: var(--color-primary);
+}
+
 /* Clients Section Styles */
 .client-logos {
   display: flex;
@@ -838,31 +933,6 @@ section#home .relative.z-10 {
   background: linear-gradient(to bottom, transparent, white);
 }
 
-/* ===== Special Link for MPJTeamsApp ===== */
-.nav-link-special {
-  background-color: #2563eb; /* blue-600 */
-  color: white !important;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-radius: 9999px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-out;
-}
-
-.nav-link-special:hover {
-  background-color: #1d4ed8; /* blue-700 */
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
-}
-
-.nav-link-special::after {
-  display: none; /* Menghilangkan garis bawah dari .nav-link-hero */
-}
-
 /* Style untuk mode scrolled */
 .header-scrolled .nav-link-special {
   color: white !important; /* Memastikan teks tetap putih */
@@ -870,141 +940,6 @@ section#home .relative.z-10 {
 
 .header-scrolled .nav-link-special:hover {
   color: white !important;
-}
-
-/* Style untuk Mobile Menu */
-.mobile-nav-link-special {
-  color: #60a5fa !important; /* blue-400 */
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-}
-
-.mobile-nav-link-special:hover {
-  color: #93c5fd !important; /* blue-300 */
-  transform: scale(1.1) rotate(-3deg);
-}
-
-/* ===== Modern Testimonial Card Styles (V2) ===== */
-.testimonial-card-v2 {
-  position: relative;
-  background-color: #f9fafb; /* gray-50 */
-  border-radius: 1rem; /* rounded-lg */
-  padding: 1.5rem;
-  padding-top: 4.5rem; /* Memberi ruang untuk avatar */
-  text-align: center;
-  border: 1px solid #e5e7eb; /* border-gray-200 */
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  display: flex; /* Tambahkan ini */
-  flex-direction: column; /* Tambahkan ini */
-}
-
-.testimonial-card-v2:hover {
-  transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
-  border-color: var(--color-primary);
-}
-
-.testimonial-avatar-v2 {
-  position: absolute;
-  top: -50px; /* Mengangkat avatar ke atas kartu */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #fff;
-  padding: 5px; /* Jarak antara border dengan gambar */
-  box-shadow: 0 10px 20px -10px rgba(245, 158, 11, 0.5);
-  transition: all 0.4s ease;
-}
-
-.testimonial-card-v2:hover .testimonial-avatar-v2 {
-  transform: translateX(-50%) scale(1.1) rotate(5deg);
-  box-shadow: 0 15px 25px -10px rgba(245, 158, 11, 0.7);
-}
-
-.testimonial-avatar-v2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.testimonial-content-v2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-
-.testimonial-text-v2 {
-  font-size: 0.95rem;
-  font-style: italic;
-  color: #4b5563; /* text-gray-600 */
-  flex-grow: 1; /* Memastikan kutipan mengisi ruang */
-  margin-bottom: 1.5rem;
-  position: relative;
-  padding: 0 1rem;
-}
-
-.testimonial-text-v2::before,
-.testimonial-text-v2::after {
-  font-family: "Georgia", "serif";
-  font-size: 3rem;
-  color: var(--color-primary);
-  opacity: 0.3;
-  position: absolute;
-}
-
-.testimonial-text-v2::before {
-  content: "“";
-  top: -1.5rem;
-  left: -0.5rem;
-}
-
-.testimonial-text-v2::after {
-  content: "”";
-  bottom: -2rem;
-  right: -0.5rem;
-}
-
-.testimonial-author-v2 {
-  margin-top: auto; /* Mendorong nama ke bagian bawah kartu */
-}
-
-.testimonial-name-v2 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--color-text);
-}
-
-.testimonial-company-v2 {
-  font-size: 0.85rem;
-  color: var(--color-primary-dark);
-  font-weight: 500;
-}
-
-/* ===== Testimonials Slider Styles (REVISED FIX) ===== */
-#testimonials-slider {
-  /* Hapus overflow: hidden; agar avatar tidak terpotong */
-  overflow: visible; 
-  position: relative;
-}
-
-#testimonials-slider .swiper-pagination {
-  bottom: 20px;
-}
-
-#testimonials-slider .swiper-pagination-bullet {
-  background-color: #d1d5db;
-  opacity: 0.8;
-  transition: all 0.3s ease;
-}
-
-#testimonials-slider .swiper-pagination-bullet-active {
-  background-color: var(--color-primary);
-  transform: scale(1.2);
-  opacity: 1;
 }
 
 /* ===== FIX FOR MOBILE RESPONSIVENESS ===== */
@@ -1019,7 +954,7 @@ section#home .relative.z-10 {
     padding-bottom: 5rem; /* Adjust bottom padding for balance */
     text-align: center; /* Center text on mobile */
   }
-  
+
   .hero-title {
     font-size: 1.7rem; /* Slightly reduce font size */
   }
@@ -1028,10 +963,122 @@ section#home .relative.z-10 {
   #home .flex-col.sm\:flex-row {
     justify-content: center;
   }
-  
+
   /* 2. Perbaikan Title Section yang terpotong */
   .section-title {
     font-size: 1.6rem; /* Kurangi sedikit ukuran font judul section */
     line-height: 1.4; /* Sesuaikan line-height agar tidak ada ruang aneh */
   }
+}
+
+/* ===== PERBAIKAN: Galeri di Tampilan Mobile ===== */
+@media (max-width: 767px) {
+  .gallery-slider {
+    height: auto; /* 1. Mengubah tinggi slider menjadi otomatis */
+    background-color: #f0f0f0; /* Memberi warna latar belakang */
+    border-radius: 0.75rem;
+  }
+
+  .gallery-slide-image {
+    height: auto; /* 2. Mengubah tinggi gambar menjadi otomatis */
+    max-height: 60vh; /* Batas tinggi maksimal agar tidak terlalu memakan layar */
+    object-fit: contain; /* 3. KUNCI UTAMA: Membuat gambar tampil utuh */
+  }
+
+  /* Penyesuaian agar tombol navigasi tidak menabrak gambar */
+  .gallery-slider .swiper-button-next,
+  .gallery-slider .swiper-button-prev {
+    width: 36px;
+    height: 36px;
+  }
+  .gallery-slider .swiper-button-next::after,
+  .gallery-slider .swiper-button-prev::after {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Final MPJTeamsApp Button Style (Branded Colors) ===== */
+
+.nav-link-special {
+  /* 1. Gradien diganti dengan warna utama brand */
+  background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary));
+  color: white !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  /* 2. Bayangan disesuaikan dengan warna baru */
+  box-shadow: 0 4px 15px -3px rgba(245, 158, 11, 0.4);
+  transition: all 0.3s ease-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3. Efek Hover disesuaikan */
+.nav-link-special:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 7px 20px -5px rgba(217, 119, 6, 0.6);
+}
+
+/* Efek kilau saat hover (tetap putih agar kontras) */
+.nav-link-special::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.nav-link-special:hover::before {
+  left: 100%;
+}
+
+.nav-link-special::after {
+  display: none;
+}
+
+/* Animasi ikon */
+.nav-link-special .icon-special {
+  transition: transform 0.3s ease;
+}
+.nav-link-special:hover .icon-special {
+  transform: translateX(4px);
+}
+
+/* Style untuk header saat di-scroll */
+.header-scrolled .nav-link-special {
+  color: white !important;
+}
+
+/* ===== Style untuk Mobile Menu (Branded & Konsisten) ===== */
+.mobile-nav-link-special {
+  background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary));
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1.5rem;
+  line-height: normal;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: white !important;
+  text-shadow: none;
+}
+
+.mobile-nav-link-special:hover {
+  transform: scale(1.1);
+  color: white !important;
+}
+
+.mobile-nav-link-special .icon-special {
+    font-size: 1.2rem;
 }

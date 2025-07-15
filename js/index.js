@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     question.addEventListener("click", () => {
       const isActive = question.classList.contains("active");
 
+      // Menutup semua item lain sebelum membuka yang baru
       faqItems.forEach((otherItem) => {
         otherItem.querySelector(".faq-question").classList.remove("active");
         otherItem.querySelector(".faq-answer").style.maxHeight = null;
@@ -25,9 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (header) {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
-        header.classList.add("scrolled");
+        header.classList.add("header-scrolled"); // Menggunakan class dari CSS
       } else {
-        header.classList.remove("scrolled");
+        header.classList.remove("header-scrolled");
       }
     });
   }
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // --- Gallery Swiper Slider ---
-  const gallerySlider = new Swiper(".gallery-slider", {
+  new Swiper(".gallery-slider", {
     loop: true,
     speed: 800,
     autoplay: {
@@ -58,12 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
       disableOnInteraction: false,
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: ".gallery-slider .swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".gallery-slider .swiper-button-next",
+      prevEl: ".gallery-slider .swiper-button-prev",
     },
   });
 
@@ -95,199 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   initServicesSlider();
   window.addEventListener("resize", initServicesSlider);
-
-  // --- Preloader ---
-  const preloader = document.querySelector("#preloader");
-  window.addEventListener("load", () => {
-    preloader.style.opacity = "0";
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 500);
-  });
-
-  // --- Mobile Menu ---
-  const mobileMenuButton = document.querySelector("#mobileMenuButton");
-  const mobileMenu = document.querySelector("#mobileMenu");
-  const closeMenuButton = document.querySelector("#closeMenuButton");
-
-  const toggleMenu = () => mobileMenu.classList.toggle("translate-x-full");
-
-  mobileMenuButton.addEventListener("click", toggleMenu);
-  closeMenuButton.addEventListener("click", toggleMenu);
-
-  document.querySelectorAll('#mobileMenu a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", toggleMenu);
-  });
-
-  // --- Stats Counter Animation (Re-animates on scroll) ---
-  const statsSection = document.querySelector("#stats-section");
-
-  if (statsSection) {
-    const statsObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Jika section masuk ke layar (terlihat)
-          if (entry.isIntersecting) {
-            // Cek apakah sudah dianimasikan. Jika sudah, hentikan.
-            if (statsSection.dataset.animated === "true") return;
-
-            // Mulai animasi angka
-            const statNumbers = statsSection.querySelectorAll(".stat-number");
-            statNumbers.forEach((element) => {
-              const target = parseInt(element.dataset.target);
-              let current = 0;
-              const duration = 2000; // Durasi animasi dalam milidetik
-              // Kalkulasi penambahan angka agar animasi terasa halus
-              const increment =
-                target > 100 ? Math.ceil(target / (duration / 20)) : 1;
-              const stepTime = Math.max(1, duration / (target / increment));
-
-              const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                  current = target;
-                  clearInterval(timer);
-                }
-                element.textContent = current;
-              }, stepTime);
-            });
-
-            // Tandai bahwa animasi sudah berjalan untuk sesi tampilan ini
-            statsSection.dataset.animated = "true";
-          } else {
-            // Jika section keluar dari layar, reset angka ke 0 dan hapus penanda animasi
-            const statNumbers = statsSection.querySelectorAll(".stat-number");
-            statNumbers.forEach((element) => {
-              element.textContent = "0";
-            });
-            statsSection.dataset.animated = "false";
-          }
-        });
-      },
-      {
-        threshold: 0.5, // Animasi terpicu saat 50% section terlihat
-      }
-    );
-
-    statsObserver.observe(statsSection);
-  }
-
-  // --- Scroll to Top Button ---
-  const scrollToTopBtn = document.querySelector("#scrollToTopBtn");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      scrollToTopBtn.classList.remove("scale-0");
-    } else {
-      scrollToTopBtn.classList.add("scale-0");
-    }
-  });
-  scrollToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-
-  // --- Auto-update Copyright Year ---
-  const currentYearSpan = document.getElementById("currentYear");
-  if (currentYearSpan) {
-    currentYearSpan.textContent = new Date().getFullYear();
-  }
-
-  // --- Live News Slider ---
-  async function fetchAndDisplayNews() {
-    // PENTING: Ganti dengan API Key yang Anda dapatkan dari NewsAPI.org
-    const API_KEY = "1387344606a845939c327c3d23d7e48b";
-    const query =
-      '("tenaga kerja indonesia" OR "pekerja migran indonesia" OR "lowongan kerja luar negeri" OR "indonesian migrant worker")';
-    const url = `https://newsapi.org/v2/everything?q=${query}&language=id&sortBy=publishedAt&pageSize=10&apiKey=${API_KEY}`;
-
-    const newsWrapper = document.getElementById("news-slider-wrapper");
-
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Gagal mengambil berita: ${response.statusText}`);
-      }
-      const data = await response.json();
-      const articles = data.articles;
-
-      // Bersihkan penanda loading
-      newsWrapper.innerHTML = "";
-
-      // Fungsi untuk memformat tanggal
-      const formatDate = (isoDate) => {
-        const date = new Date(isoDate);
-        return date.toLocaleDateString("id-ID", {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        });
-      };
-
-      articles.forEach((article) => {
-        // Jangan tampilkan artikel tanpa gambar atau judul
-        if (!article.urlToImage || !article.title) return;
-
-        const newsCardHTML = `
-        <div class="swiper-slide">
-          <div class="news-card">
-            <img src="${
-              article.urlToImage
-            }" alt="Gambar Berita" class="news-card-image" onerror="this.onerror=null;this.src='/assets/a2.jpg';">
-            <div class="news-card-content">
-              <p class="news-card-meta">
-                <span class="source">${
-                  article.source.name
-                }</span> &bull; ${formatDate(article.publishedAt)}
-              </p>
-              <h3 class="news-card-title">${article.title}</h3>
-              <p class="news-card-description">${
-                article.description || "Tidak ada deskripsi."
-              }</p>
-              <a href="${
-                article.url
-              }" target="_blank" rel="noopener noreferrer" class="news-card-link">Baca Selengkapnya &rarr;</a>
-            </div>
-          </div>
-        </div>
-      `;
-        newsWrapper.innerHTML += newsCardHTML;
-      });
-
-      // Inisialisasi Swiper SETELAH berita dimuat
-      new Swiper("#news-slider", {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-          el: "#news-slider .swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: "#news-slider .swiper-button-next",
-          prevEl: "#news-slider .swiper-button-prev",
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        },
-      });
-    } catch (error) {
-      console.error("Error:", error);
-      newsWrapper.innerHTML = `<p class="text-center w-full text-red-500">Gagal memuat berita. ${error.message}. Pastikan API Key Anda valid.</p>`;
-    }
-  }
-
-  // Panggil fungsi untuk mengambil berita saat halaman dimuat
-  fetchAndDisplayNews();
-
+  
   // --- Testimonials Swiper Slider ---
-  const testimonialsSlider = new Swiper("#testimonials-slider", {
+  new Swiper("#testimonials-slider", {
     loop: true,
     speed: 800,
     slidesPerView: 1,
@@ -301,12 +112,10 @@ document.addEventListener("DOMContentLoaded", function () {
       disableOnInteraction: false,
     },
     breakpoints: {
-      // Tampilan untuk layar tablet
       768: {
         slidesPerView: 2,
         spaceBetween: 30,
       },
-      // Tampilan untuk layar desktop
       1024: {
         slidesPerView: 3,
         spaceBetween: 40,
@@ -315,4 +124,192 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+  // --- Preloader ---
+  const preloader = document.querySelector("#preloader");
+  if (preloader) {
+    window.addEventListener("load", () => {
+      preloader.style.opacity = "0";
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 500);
+    });
+  }
+
+  // --- Mobile Menu ---
+  const mobileMenuButton = document.querySelector("#mobileMenuButton");
+  const mobileMenu = document.querySelector("#mobileMenu");
+  const closeMenuButton = document.querySelector("#closeMenuButton");
+
+  const toggleMenu = (e) => {
+    e.preventDefault();
+    mobileMenu.classList.toggle("translate-x-full");
+  };
+
+  if (mobileMenuButton && mobileMenu && closeMenuButton) {
+    mobileMenuButton.addEventListener("click", toggleMenu);
+    closeMenuButton.addEventListener("click", toggleMenu);
+
+    document.querySelectorAll('#mobileMenu a').forEach((link) => {
+      link.addEventListener("click", () => {
+        // Hanya tutup menu jika link mengarah ke section (#)
+        if(link.getAttribute('href').startsWith('#')) {
+            mobileMenu.classList.add("translate-x-full");
+        }
+      });
+    });
+  }
+
+  // --- Stats Counter Animation ---
+  const statsSection = document.querySelector("#stats-section");
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll(".stat-number");
+            statNumbers.forEach((element) => {
+              // Hanya jalankan animasi jika belum pernah dijalankan
+              if (element.dataset.animated === "true") return;
+              
+              const target = parseInt(element.dataset.target, 10);
+              element.textContent = "0"; // Reset ke 0
+              element.dataset.animated = "true"; // Tandai sebagai sudah dianimasikan
+
+              let current = 0;
+              const duration = 2000;
+              const increment = target > 100 ? Math.ceil(target / (duration / 20)) : 1;
+              const stepTime = Math.max(1, Math.floor(duration / (target / increment)));
+
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                element.textContent = current;
+              }, stepTime);
+            });
+          }
+        });
+      }, {
+        threshold: 0.5,
+      }
+    );
+    statsObserver.observe(statsSection);
+  }
+
+  // --- Scroll to Top Button ---
+  const scrollToTopBtn = document.querySelector("#scrollToTopBtn");
+  if(scrollToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.remove("scale-0");
+      } else {
+        scrollToTopBtn.classList.add("scale-0");
+      }
+    });
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  // --- Auto-update Copyright Year ---
+  const currentYearSpan = document.getElementById("currentYear");
+  if (currentYearSpan) {
+    currentYearSpan.textContent = new Date().getFullYear();
+  }
+
+  // --- Live News Slider (Secure Version) ---
+  async function fetchAndDisplayNews() {
+    // URL sekarang mengarah ke serverless function kita, BUKAN NewsAPI langsung
+    const url = "/.netlify/functions/getNews"; 
+    const newsWrapper = document.getElementById("news-slider-wrapper");
+
+    if (!newsWrapper) return;
+
+    try {
+      // Tidak ada lagi API Key di sini!
+      const response = await fetch(url);
+      if (!response.ok) {
+        // Coba baca pesan error dari server jika ada
+        const errorData = await response.json().catch(() => null);
+        const errorMessage = errorData?.error || `Gagal mengambil berita: Status ${response.status}`;
+        throw new Error(errorMessage);
+      }
+      const data = await response.json();
+      
+      // Cek jika API dari serverless function mengembalikan error
+      if (data.status === 'error') {
+        throw new Error(data.message || 'API Key tidak valid atau ada masalah lain.');
+      }
+
+      const articles = data.articles;
+
+      if (!articles || articles.length === 0) {
+        newsWrapper.innerHTML = `<p class="text-center w-full text-gray-500">Tidak ada berita terkini yang ditemukan.</p>`;
+        return;
+      }
+
+      newsWrapper.innerHTML = ""; // Bersihkan penanda loading
+
+      const formatDate = (isoDate) => {
+        if(!isoDate) return 'Tanggal tidak diketahui';
+        const date = new Date(isoDate);
+        return date.toLocaleDateString("id-ID", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+      };
+
+      articles.forEach((article) => {
+        if (!article.urlToImage || !article.title) return;
+
+        const newsCardHTML = `
+        <div class="swiper-slide">
+          <div class="news-card h-full">
+            <img src="${article.urlToImage}" alt="Gambar Berita: ${article.title}" class="news-card-image" onerror="this.onerror=null;this.src='assets/a2.jpg';">
+            <div class="news-card-content">
+              <p class="news-card-meta">
+                <span class="source">${article.source.name || 'Sumber tidak diketahui'}</span> &bull; ${formatDate(article.publishedAt)}
+              </p>
+              <h3 class="news-card-title">${article.title}</h3>
+              <p class="news-card-description">${article.description || "Tidak ada deskripsi."}</p>
+              <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="news-card-link">Baca Selengkapnya &rarr;</a>
+            </div>
+          </div>
+        </div>
+      `;
+        newsWrapper.insertAdjacentHTML('beforeend', newsCardHTML);
+      });
+
+      // Inisialisasi Swiper SETELAH berita dimuat
+      new Swiper("#news-slider", {
+        loop: articles.length > 3, // Hanya loop jika berita cukup banyak
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: "#news-slider .swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: "#news-slider .swiper-button-next",
+          prevEl: "#news-slider .swiper-button-prev",
+        },
+        breakpoints: {
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    } catch (error) {
+      console.error("Error saat fetch berita:", error);
+      newsWrapper.innerHTML = `<p class="text-center w-full text-red-500">Gagal memuat berita. Silakan coba lagi nanti.</p>`;
+    }
+  }
+
+  // Panggil fungsi untuk mengambil berita saat halaman dimuat
+  fetchAndDisplayNews();
 });
