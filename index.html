@@ -170,18 +170,8 @@
       </div>
     </section>
 
-    <section
-      id="services"
-      class="py-20 bg-gray-50 overflow-hidden relative text-white"
-    >
-      <div class="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop"
-          alt="Pekerja industri terampil"
-          class="w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-gray-900/70"></div>
-      </div>
+    <section id="services" class="py-20 overflow-hidden relative text-white">
+      <div id="particles-js" class="absolute inset-0 z-0"></div>
 
       <div class="container mx-auto px-6 text-center relative z-10">
         <h2 class="section-title" data-aos="fade-down">Misi Kami</h2>
@@ -281,42 +271,51 @@
         <h2 class="section-title text-center" data-aos="fade-down">
           Nilai-Nilai Kami (M-P-J)
         </h2>
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div class="value-card" data-aos="fade-up" data-aos-delay="200">
-            <img
-              src="https://cdn3d.iconscout.com/3d/premium/thumb/goal-4035930-3337439.png"
-              alt="Mastery 3D Icon"
-              class="value-icon"
-            />
-            <h3 class="value-title">MASTERY (M)</h3>
-            <p class="value-description">
-              Mencapai keunggulan dan terus mengembangkan keahlian untuk
-              memberikan layanan berkualitas tinggi.
-            </p>
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 values-grid">
+          <div class="value-card-3d" data-aos="fade-up" data-aos-delay="200">
+            <div class="value-card-3d-inner">
+              <div class="value-card-3d-icon">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/goal-4035930-3337439.png" alt="Mastery 3D Icon"/>
+              </div>
+              <div class="value-card-3d-content">
+                <h3 class="value-card-3d-title">MASTERY (M)</h3>
+                <p class="value-card-3d-description">
+                  Mencapai keunggulan dan terus mengembangkan keahlian untuk
+                  memberikan layanan berkualitas tinggi.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="value-card" data-aos="fade-up" data-aos-delay="300">
-            <img
-              src="https://cdn3d.iconscout.com/3d/premium/thumb/agreement-4035939-3337448.png"
-              alt="Professionalism 3D Icon"
-              class="value-icon"
-            />
-            <h3 class="value-title">PROFESIONALISM (P)</h3>
-            <p class="value-description">
-              Bertindak dengan integritas, kompetensi, dan keandalan tinggi
-              dalam setiap interaksi.
-            </p>
+
+          <div class="value-card-3d" data-aos="fade-up" data-aos-delay="300">
+            <div class="value-card-3d-inner">
+              <div class="value-card-3d-icon">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/agreement-4035939-3337448.png" alt="Professionalism 3D Icon"/>
+              </div>
+              <div class="value-card-3d-content">
+                <h3 class="value-card-3d-title">PROFESIONALISM (P)</h3>
+                <p class="value-card-3d-description">
+                  Bertindak dengan integritas, kompetensi, dan keandalan tinggi
+                  dalam setiap interaksi.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="value-card" data-aos="fade-up" data-aos-delay="400">
-            <img
-              src="https://cdn3d.iconscout.com/3d/premium/thumb/path-4035948-3337457.png"
-              alt="Journey 3D Icon"
-              class="value-icon"
-            />
-            <h3 class="value-title">JOURNEY (J)</h3>
-            <p class="value-description">
-              Memandang hubungan dengan klien sebagai perjalanan jangka panjang
-              yang berkelanjutan.
-            </p>
+
+          <div class="value-card-3d" data-aos="fade-up" data-aos-delay="400">
+            <div class="value-card-3d-inner">
+              <div class="value-card-3d-icon">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/path-4035948-3337457.png" alt="Journey 3D Icon"/>
+              </div>
+              </div>
+              <div class="value-card-3d-content">
+                <h3 class="value-card-3d-title">JOURNEY (J)</h3>
+                <p class="value-card-3d-description">
+                  Memandang hubungan dengan klien sebagai perjalanan jangka
+                  panjang yang berkelanjutan.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -879,13 +878,14 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 800, // Durasi animasi dalam milidetik
-        once: false, // Animasi hanya terjadi sekali
-        offset: 50, // Memicu animasi sedikit lebih awal
+        duration: 800,
+        once: false,
+        offset: 50,
       });
     </script>
     <script src="js/index.js"></script>

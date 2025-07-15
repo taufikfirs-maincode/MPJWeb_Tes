@@ -1,4 +1,3 @@
-/* MENGUBAH LEBAR MAKSIMAL CONTAINER (LEBIH LEBAR) */
 .container {
   width: 100%;
   margin-left: auto;
@@ -19,28 +18,27 @@
 }
 @media (min-width: 1024px) {
   .container {
-    max-width: 1024px; /* Sedikit lebih lebar */
+    max-width: 1024px;
   }
 }
 @media (min-width: 1280px) {
   .container {
-    max-width: 1140px; /* Sedikit lebih lebar */
+    max-width: 1140px;
   }
 }
-/* AKHIR DARI PERUBAHAN */
 
 /* MENYESUAIKAN PADDING SECTION AGAR TIDAK TERLALU KOSONG */
 section {
-  padding-top: 5rem; /* py-20 */
-  padding-bottom: 5rem; /* py-20 */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 /* Custom Properties for Theming (Variabel CSS Standar) */
 :root {
-  --color-primary: #f59e0b; /* amber-500 */
-  --color-primary-dark: #d97706; /* amber-600 */
-  --color-secondary: #f3f4f6; /* gray-100 */
-  --color-text: #1f2937; /* gray-800 */
+  --color-primary: #f59e0b;
+  --color-primary-dark: #d97706;
+  --color-secondary: #f3f4f6;
+  --color-text: #1f2937;
   --font-body: "Inter", sans-serif;
   --font-heading: "Poppins", serif;
   --transition-fast: all 0.3s ease-in-out;
@@ -112,7 +110,7 @@ body {
 /* --- State: Header Saat di-Scroll --- */
 #header.header-scrolled {
   background-color: rgba(255, 255, 255, 0.85);
-  background-image: none; /* Menghapus gradien saat di-scroll */
+  background-image: none;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.08);
@@ -192,7 +190,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  transform: translateX(100%); /* Mulai dari luar layar */
+  transform: translateX(100%);
   width: 100%;
   height: 100%;
   background-color: rgba(17, 24, 39, 0.95);
@@ -295,7 +293,7 @@ body {
 
 /* Section Titles */
 .section-title {
-  font-size: 1.75rem; /* Sebelumnya 1.875rem */
+  font-size: 1.75rem;
   line-height: 2.25rem;
   font-weight: 700;
   font-family: var(--font-heading);
@@ -303,12 +301,12 @@ body {
 }
 .section-subtitle {
   font-size: 1rem;
-  line-height: 1.75rem; /* Sedikit lebih tinggi untuk kenyamanan membaca */
-  color: #4b5563; /* text-gray-600 */
+  line-height: 1.75rem;
+  color: #4b5563;
 }
 @media (min-width: 768px) {
   .section-title {
-    font-size: 2rem; /* Sebelumnya 2.25rem */
+    font-size: 2rem;
     line-height: 2.5rem;
   }
   .section-subtitle {
@@ -322,24 +320,24 @@ body {
   background-color: white;
   padding: 2rem;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 15px -3px rgb(0 0 0 / 0.07); /* Bayangan lebih halus */
+  box-shadow: 0 4px 15px -3px rgb(0 0 0 / 0.07);
   text-align: center;
   transition: all 0.3s ease;
 }
 .service-card:hover {
   transform: translateY(-0.5rem);
-  box-shadow: 0 10px 25px -12px rgb(0 0 0 / 0.2); /* Bayangan saat hover juga diperhalus */
+  box-shadow: 0 10px 25px -12px rgb(0 0 0 / 0.2);
 }
 .service-icon {
-  width: 4rem; /* Sebelumnya 5rem */
-  height: 4rem; /* Sebelumnya 5rem */
+  width: 4rem;
+  height: 4rem;
   border-radius: 9999px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.875rem; /* Sebelumnya 2.25rem */
+  font-size: 1.875rem;
   line-height: 2.25rem;
   margin-bottom: 1.5rem;
 }
@@ -354,38 +352,89 @@ body {
   color: #4b5563;
 }
 
-/* Value Card Styles */
-.value-card {
+/*
+================================================
+  INTERACTIVE 3D VALUE CARDS
+================================================
+*/
+.values-grid {
+  perspective: 1500px; /* Memberi perspektif 3D untuk kartu di dalamnya */
+}
+
+.value-card-3d {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5; /* Menjaga rasio kartu agar tidak terlalu tinggi */
   background-color: #f9fafb;
+  border-radius: 1rem;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+
+.value-card-3d-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
   padding: 2rem;
-  border-radius: 0.75rem;
-  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Konten terpusat secara vertikal */
+  align-items: center;
   text-align: center;
-  transition: all 0.3s ease;
+  transform: translateZ(40px); /* Memberi sedikit kedalaman pada konten */
+  transform-style: preserve-3d;
 }
-.value-card:hover {
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
-  border-color: #fde68a;
+
+.value-card-3d-icon {
+  width: 70%; /* Ikon lebih besar dan dominan */
+  max-width: 180px;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.value-icon {
-  width: 6rem; /* Disesuaikan */
-  height: 6rem; /* Disesuaikan */
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  object-fit: contain; /* Memastikan gambar pas */
+
+.value-card-3d-icon img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 15px rgba(0, 0, 0, 0.2));
 }
-.value-title {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 700;
+
+.value-card-3d-content {
+  position: absolute;
+  bottom: 2rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.value-card-3d-title {
   font-family: var(--font-heading);
+  font-size: 1.3rem;
   color: var(--color-primary-dark);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
-.value-description {
+
+.value-card-3d-description {
+  font-size: 0.95rem;
   color: #4b5563;
+  line-height: 1.6;
+  opacity: 0; /* Deskripsi disembunyikan di awal */
+  transform: translateY(20px); /* Posisi awal sedikit di bawah */
+}
+
+/* --- EFEK HOVER --- */
+.value-card-3d:hover {
+  transform: rotateX(10deg) rotateY(-5deg) translateY(-10px);
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.25);
+}
+
+.value-card-3d:hover .value-card-3d-icon {
+  transform: translateY(-50%); /* Ikon bergerak ke atas, keluar dari kartu */
+}
+
+.value-card-3d:hover .value-card-3d-description {
+  opacity: 1; /* Deskripsi muncul */
+  transform: translateY(0); /* Kembali ke posisi normal */
 }
 
 /* Modern Footer Styles */
@@ -584,28 +633,11 @@ section#home .relative.z-10 {
   padding-bottom: 8rem;
 }
 
-/* Style untuk Section Misi Kami (Services) dengan Background */
-#services.text-white .section-title,
-#services.text-white .service-title {
-  color: white;
-}
-#services.text-white .service-description {
-  color: #d1d5db;
-}
-#services .service-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.section-subtitle.\!text-gray-300 {
-  color: #d1d5db !important;
-}
-
 /* Services Slider Styles */
 #services-slider {
   overflow: hidden;
   position: relative;
-  padding-bottom: 2.5rem; /* Ruang untuk pagination di mobile */
+  padding-bottom: 2.5rem;
 }
 #services-slider .swiper-pagination {
   bottom: 0px;
@@ -734,14 +766,12 @@ section#home .relative.z-10 {
 }
 
 .testimonial-avatar-final {
-  /* FOTO DIPERBESAR DI SINI */
-  width: 70px; /* Diperbesar dari 55px */
-  height: 70px; /* Diperbesar dari 55px */
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 1.25rem; /* Jarak ke teks disesuaikan */
-  flex-shrink: 0; /* Mencegah gambar menyusut */
-  /* Bingkai disesuaikan agar proporsional */
+  margin-right: 1.25rem;
+  flex-shrink: 0;
   box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--color-primary);
 }
 
@@ -752,12 +782,12 @@ section#home .relative.z-10 {
 .testimonial-name-final {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.15rem; /* Sedikit diperbesar agar seimbang */
+  font-size: 1.15rem;
   color: var(--color-text);
 }
 
 .testimonial-company-final {
-  font-size: 0.9rem; /* Sedikit diperbesar agar seimbang */
+  font-size: 0.9rem;
   color: #6b7280;
   font-weight: 500;
 }
@@ -858,28 +888,26 @@ section#home .relative.z-10 {
 
 /* Style untuk mode scrolled */
 .header-scrolled .nav-link-special {
-  color: white !important; /* Memastikan teks tetap putih */
+  color: white !important;
 }
 
 .header-scrolled .nav-link-special:hover {
   color: white !important;
 }
 
-/* ===== FIX FOR MOBILE RESPONSIVENESS ===== */
 @media (max-width: 767px) {
-  /* 1. Perbaikan Hero Title yang terlalu ke atas */
   section#home {
-    align-items: center; /* Vertically center the content container */
+    align-items: center;
   }
 
   section#home .relative.z-10 {
-    padding-top: 5rem; /* Add padding top to push content down */
-    padding-bottom: 5rem; /* Adjust bottom padding for balance */
-    text-align: center; /* Center text on mobile */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: center;
   }
 
   .hero-title {
-    font-size: 1.7rem; /* Slightly reduce font size */
+    font-size: 1.7rem;
   }
 
   /* Center the buttons on mobile */
@@ -889,26 +917,25 @@ section#home .relative.z-10 {
 
   /* 2. Perbaikan Title Section yang terpotong */
   .section-title {
-    font-size: 1.6rem; /* Kurangi sedikit ukuran font judul section */
-    line-height: 1.4; /* Sesuaikan line-height agar tidak ada ruang aneh */
+    font-size: 1.6rem;
+    line-height: 1.4;
   }
 }
 
-/* ===== PERBAIKAN: Galeri di Tampilan Mobile ===== */
+/* ===== Galeri di Tampilan Mobile ===== */
 @media (max-width: 767px) {
   .gallery-slider {
-    height: auto; /* 1. Mengubah tinggi slider menjadi otomatis */
-    background-color: #f0f0f0; /* Memberi warna latar belakang */
+    height: auto;
+    background-color: #f0f0f0;
     border-radius: 0.75rem;
   }
 
   .gallery-slide-image {
-    height: auto; /* 2. Mengubah tinggi gambar menjadi otomatis */
-    max-height: 60vh; /* Batas tinggi maksimal agar tidak terlalu memakan layar */
-    object-fit: contain; /* 3. KUNCI UTAMA: Membuat gambar tampil utuh */
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
   }
 
-  /* Penyesuaian agar tombol navigasi tidak menabrak gambar */
   .gallery-slider .swiper-button-next,
   .gallery-slider .swiper-button-prev {
     width: 36px;
@@ -920,10 +947,9 @@ section#home .relative.z-10 {
   }
 }
 
-/* ===== Final MPJTeamsApp Button Style (Branded Colors) ===== */
+/* ===== MPJTeamsApp Button Style ===== */
 
 .nav-link-special {
-  /* 1. Gradien diganti dengan warna utama brand */
   background: linear-gradient(
     45deg,
     var(--color-primary-dark),
@@ -932,7 +958,6 @@ section#home .relative.z-10 {
   color: white !important;
   padding: 0.6rem 1.2rem;
   border-radius: 9999px;
-  /* 2. Bayangan disesuaikan dengan warna baru */
   box-shadow: 0 4px 15px -3px rgba(245, 158, 11, 0.4);
   transition: all 0.3s ease-out;
   display: inline-flex;
@@ -943,13 +968,11 @@ section#home .relative.z-10 {
   overflow: hidden;
 }
 
-/* 3. Efek Hover disesuaikan */
 .nav-link-special:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 7px 20px -5px rgba(217, 119, 6, 0.6);
 }
 
-/* Efek kilau saat hover (tetap putih agar kontras) */
 .nav-link-special::before {
   content: "";
   position: absolute;
@@ -987,7 +1010,7 @@ section#home .relative.z-10 {
   color: white !important;
 }
 
-/* ===== Style untuk Mobile Menu (Branded & Konsisten) ===== */
+/* ===== Style untuk Mobile Menu ===== */
 .mobile-nav-link-special {
   background: linear-gradient(
     45deg,
@@ -1012,4 +1035,82 @@ section#home .relative.z-10 {
 
 .mobile-nav-link-special .icon-special {
   font-size: 1.2rem;
+}
+
+/*
+================================================
+  ENHANCED BACKGROUND FOR "MISI KAMI" SECTION
+================================================
+*/
+
+#services {
+  background-color: #111827;
+  position: relative;
+}
+
+/* Menambahkan pola titik-titik (dots) yang subtil di atas gradien */
+.animated-gradient-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+  opacity: 0.5;
+}
+
+/* Keyframes untuk animasi gradien */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#services .service-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+#services .service-card:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-10px);
+}
+
+/* Memastikan judul dan deskripsi tetap terbaca dengan baik */
+#services.text-white .service-description {
+  color: #e5e7eb;
+}
+
+/*
+================================================
+  ADVANCED PARTICLE BACKGROUND - "MISI KAMI"
+================================================
+*/
+
+#services {
+  background-color: #111827;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+
+  background-image: linear-gradient(180deg, #1f2937, #111827);
+  background-size: cover;
+  background-position: 50% 50%;
 }
